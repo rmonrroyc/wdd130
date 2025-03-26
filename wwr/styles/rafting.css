@@ -47,54 +47,53 @@ nav a:hover {
     color: var(--highlight-color);
 }
 
-.hero-image {
+.hero {
     position: relative;  /* Permite posicionar elementos hijos de manera absoluta */
     width: 100%; /* La imagen ocupa todo el ancho disponible */
-    display: block; /* Asegura que la imagen sea un bloque */
-    margin: 0;
 }
 
-.hero-image img {
+.hero img {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho */
     height: auto; /* Mantiene la relación de aspecto de la imagen */
     display: block; /* Hace que la imagen sea un bloque para llenar el contenedor */
 }
 
-.hero-image h1 {
+.hero h1 {
     position: absolute;
-    top: 50%; /* Centra verticalmente el título */
-    left: 50%; /* Centra horizontalmente el título */
-    transform: translate(-50%, -50%); /* Ajuste perfecto de la posición */
-    font-family: var(--font-family-heading);
+    font-size: 3.5rem;
+    top: 10%; /* Ajusta según necesidad */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 2; /* Asegura que el título esté encima de otros elementos */
+    padding: 30px;
+    width: 95%;
+    text-align: center;
+    z-index: 1;
 }
 
-.hero-image article {
+.hero article {
     position: absolute; /* Posiciona el artículo de manera absoluta */
-    bottom: 20px; /* Se coloca cerca de la parte inferior del contenedor */
-    left: 20px; /* Se coloca con un margen izquierdo de 20px */
-    max-width: 40%; /* Limita el ancho del artículo */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el artículo */
+    top: 40%; /* Se coloca cerca de la parte inferior del contenedor */
+    left: 10%; /* Se coloca con un margen izquierdo de 20px */
+    max-width: 80%; /* Limita el ancho del artículo */
+    background-color: rgba(72, 0, 255, 0.2); /* Fondo semitransparente para el artículo */
     color: white;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 10px;
     z-index: 1; /* Coloca el artículo debajo del h1 */
 }
 
-.hero-image article img {
-    float: right; /* La imagen flotará a la derecha del texto */
-    max-width: 150px; /* Limita el tamaño de la imagen */
-    margin-left: 15px; /* Da espacio entre la imagen y el texto */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
+.hero article img {
+    max-width: 200px;
+    float: right;
+    display: block;
+    margin: 10px;
 }
 
-.hero-image article p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
+.hero article p {
+    font-size: 1.2rem;
+    line-height: 1.2;
 }
 
 section h2 {
