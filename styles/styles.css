@@ -3,6 +3,11 @@ nav {
     padding: 10px;
 }
 
+header, footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
 nav a {
     color: white;
     display: block;
@@ -23,10 +28,6 @@ main img {
 
 p { 
     padding: 0; 
-}
-
-main{
-    max-width: 840px
 }
 
 aside{

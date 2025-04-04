@@ -16,13 +16,15 @@
 <body>
     <header>
         <div class="logo-box">
-        <img src="images/logo.jpg" alt="logo">
+        <img src="images/logo.png" alt="logo">
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="trips.html">Trips</a>
-            <a href="contact.html">Contact</a>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -32,27 +34,49 @@
             <article>                    
                 <img src="images/worker.jpg" alt="worker image">
                 <p>Suspendisse vel leo non odio scelerisque interdum sit amet eu nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
                 </p>
             </article>
         </div>
-    <section>
-        <h2>History</h2>
-        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut varius orci quis sollicitudin sollicitudin. Nam vitae lacus magna. Nulla facilisi. Aliquam a quam enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris lacinia quam sed ante condimentum, sit amet ultrices purus venenatis. Nunc justo justo, scelerisque sed tellus auctor, volutpat efficitur mauris. Nunc eleifend odio id molestie sollicitudin. Donec vehicula consequat nisi, convallis bibendum nibh rhoncus a. Fusce placerat interdum est, vitae egestas sapien lobortis ut. Mauris vehicula, ante in accumsan finibus, elit ligula imperdiet tellus, sit amet cursus nunc orci vel purus. Etiam ac consectetur ligula. Nam nulla odio, efficitur at mi vel, rhoncus luctus ligula. Praesent sed lacinia purus.
-        </p>            
+    <section class="history" >       
+            <h2>History</h2>
+            <div class="history-content">            
+            <p>
+            Mauris lacinia quam sed ante condimentum, sit amet ultrices purus venenatis. Nunc justo justo, scelerisque sed tellus auctor, volutpat efficitur mauris. Nunc eleifend odio id molestie sollicitudin. Donec vehicula consequat nisi, convallis bibendum nibh rhoncus a Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut varius orci quis sollicitudin sollicitudin. Nam vitae lacus magna. Nulla facilisi. Aliquam a quam enim.
+            </p>
+            <img src="images/history.jpg" alt="Rafting History">
+            <p>
+                Mauris lacinia quam sed ante condimentum, sit amet ultrices purus venenatis. Nunc justo justo, scelerisque sed tellus auctor, volutpat efficitur mauris. Nunc eleifend odio id molestie sollicitudin. Donec vehicula consequat nisi, convallis bibendum nibh rhoncus a Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut varius orci quis sollicitudin sollicitudin. Nam vitae lacus magna. Nulla facilisi. Aliquam a quam enim.
+                </p>
+            </div>
     </section>
-    <section>
+    <section class="adventures">
         <h2>Adventure Awaits You!</h2>
-        <img src="images/1.jpg" alt="image 1">
-        <img src="images/2.jpg" alt="image 2">
-        <img src="images/3.jpg" alt="image 3 ">
-        <img src="images/4.jpg" alt="image 4">
-        <img src="images/5.jpg" alt="image 5">
+        <div class="adventure-gallery">        
+            <figure>
+                <img src="images/1.jpg" alt="adventure image 1">
+                <figcaption>Join us for an unforgettable experience!</figcaption>
+            </figure>
+            <figure>
+                <img src="images/2.jpg" alt="adventure image 2">
+                <figcaption>Big Mallard Rapids</figcaption>
+            </figure>
+            <figure>
+                <img src="images/3.jpg" alt="adventure image 3">
+                <figcaption>Thunder Creek Rapids!</figcaption>
+            </figure>
+            <figure>
+                <img src="images/4.jpg" alt="adventure image 4">
+                <figcaption>Half Day Adventure!</figcaption>
+            </figure>
+            <figure>
+                <img src="images/5.jpg" alt="adventure image 5">
+                <figcaption>Heart-Pounding Rapids!</figcaption>
+            </figure>
+        </div>
     </section>
     </main>
     <footer>
         <p>© 2025 ✨ WHITEWATER RAFTING ✨ Ricardo Monrroy</p>
-        <p></p>
         <nav class="socialmedia">
             <a href="https://facebook.com">
                 <img src="images/facebook.svg" alt="Twitter">
@@ -64,8 +88,6 @@
                 <img src="images/instagram.svg" alt="Instagram">
             </a>                
         </nav>
-
-    </footer>
-    
+    </footer>   
 </body>
 </html>
