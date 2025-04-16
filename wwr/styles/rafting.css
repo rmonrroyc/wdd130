@@ -10,49 +10,23 @@
 }
 
 
-body {
-    font-family: var(--font-family-main);    
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+/* Reset margins and paddings for the entire page */
+html, body {
     margin: 0;
     padding: 0;
-    
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    background-color: var(--accent1); /* Should apply the light background color */
+    color: var(--text-color); /* Should apply the text color */
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Stack the logo and navigation vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center-align text */
-    background-color: var(--primary-color); /* Optional: Add a background color */
-    padding: 20px; /* Add padding around the header */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-}
-
-header .logo-box {
-    display: flex;
-    align-items: center; /* Align logo and text vertically */
-    gap: 10px; /* Add spacing between the logo and the h1 */
-}
-
-header .logo-box img {
-    width: 150px;
-    height: auto; 
-}
-
-header h1 {
-    font-family: var(--font-family-heading); /* Use the heading font */
-    font-size: 2rem; /* Adjust font size */
-    color: var(--accent1); /* Use the primary color */
-    margin: 0; /* Remove default margin */
-    text-align: right; /* Align text to the left */
 }
 
 nav {
@@ -60,89 +34,371 @@ nav {
     justify-content: center;
     align-items: center;
     list-style: none;
-    padding: 0;
+    padding: 10px 0;
     margin: 0;
+    z-index: 2; /* Ensure it appears above other content */
+    position: relative; /* Ensure proper stacking context */
 }
 
 nav ul {
-    color: var(--accent1);
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    font-family: var(--font-family-main);
-    font-weight: 800;
+    display: flex; /* Use Flexbox for layout */
+    gap: 20px; /* Add spacing between navigation items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    font-family: var(--font-family-main); /* Use the main font family */
+    font-weight: 800; /* Make the text bold */
+    list-style: none; /* Remove default list styling */
 }
 
 nav li {
-    margin: 0;
+    margin: 0; /* Remove default margin */
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--accent1);
-    font-family: var(--font-family-main);
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 5px;    
+    text-decoration: none; /* Remove underline */
+    color: var(--accent1); /* Use a light color for better contrast */
+    font-family: var(--font-family-main); /* Use the main font family */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: 600; /* Make the text bold */
+    padding: 5px 10px; /* Add padding for better usability */
+    border-radius: 5px; /* Add rounded corners */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Add smooth hover effects */
+    background-color: var(--primary-color); /* Add a background color for better contrast */
 }
 
 nav a:hover {
-    color: var(--highlight-color);
-    text-decoration: underline;
-    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--highlight-color); /* Change text color on hover */
+    background-color: rgba(254, 252, 252, 0.548); /* Add a subtle background on hover */
+}
+
+.hero-heading {
+    position: relative; /* Set the parent container to relative */
+    width: 100%; /* Full width */
+    height: calc(100vh - 60px); /* Full height minus header height */
+    overflow: hidden; /* Prevent content from overflowing */
+    margin: 100px 0 0; /* Add margin to account for the header */
+    padding: 0px; /* Remove any default padding */
+    background-color: var(--accent1); /* Optional: Add a background color */
+}
+
+.hero-heading img {
+    display: block; /* Make the image a block element */
+    width: 100%; /* Make the image span the full width of the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.hero-heading h1 {
+    position: absolute; /* Position the heading absolutely within the .hero-heading container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 3rem; /* Adjust font size */
+    color: white; /* Set text color to white */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
+    padding: 20px 40px; /* Add padding for spacing */
+    text-align: center; /* Center-align the text */
+    border-radius: 10px; /* Add rounded corners */
+    z-index: 1; /* Ensure it appears above the image */
 }
 
 .hero {
-    position: relative;
-    width: 100%;
+    position: relative; /* Set the parent container to relative */
+    width: 100%; /* Full width */
+    height: calc(100vh - 60px); /* Full height minus header height */
+    overflow: hidden; /* Prevent content from overflowing */
+    margin: 100px 0 0; /* Add margin to account for the header */
+    padding: 0px; /* Remove any default padding */
+    background-color: var(--accent1); /* Optional: Add a background color */
 }
 
 .hero img {
-    width: 100%; 
-    height: auto; 
-    display: block; 
+    display: block; /* Make the image a block element */
+    width: 100%; /* Make the image span the full width of the container */
+    height: auto; /* Maintain the aspect ratio of the image */
 }
 
 .hero h1 {
-    position: absolute;
-    font-size: 3.5rem;
-    top: 10%; 
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 30px;
-    width: 95%;
-    text-align: center;
-    z-index: 1;
+    position: absolute; /* Position the heading absolutely within the .hero container */
+    top: 10%; /* Position 20% from the top of the .hero container */
+    width: 100%; /* Full width */
+    padding: 16px; /* Add padding for spacing */
+    text-align: center; /* Center-align the text */
+    color: white; /* Set text color to white */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
 }
 
 .hero article {
-    position: absolute; 
-    top: 40%; 
-    left: 10%;
-    max-width: 80%; 
-    background-color: rgba(72, 0, 255, 0.2); 
-    color: white;
-    padding: 10px;
-    z-index: 1; 
-}
-
-.hero article img {
-    max-width: 200px;
-    float: right;
-    display: block;
-    margin: 10px;
+    position: absolute; /* Position the article absolutely within the .hero container */
+    top: 45%; /* Position 50% from the top of the .hero container */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the article perfectly */
+    max-width: 90%; /* Limit the width of the article */
+    background-color: rgba(13, 0, 255, 0.248); /* Add a semi-transparent black background */
+    color: white; /* Set text color to white */
+    padding: 30px; /* Add padding for spacing */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1; /* Ensure it appears above other content */
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Align items vertically */
+    text-align: left; /* Align text to the left */
 }
 
 .hero article p {
     font-size: 1.2rem;
-    line-height: 1.2;
+    line-height: 1.3;
+    margin: 0;
+    flex: 1; /* Allow the text to take up remaining space */
+}
+
+.hero article img {
+    width: 200px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #cccccc6f;
+    margin: 0; /* Ensure no extra margin conflicts */
+    flex-shrink: 0; /* Prevent the image from shrinking in Flexbox */
+    padding: 5px;
+}
+
+.homepage-header{
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: auto 1fr; /* Two columns: auto for the logo, 1fr for the navigation */
+    align-items: center;
+    position: absolute; /* Position the header on top of the hero image */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.112);
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure the header is above the image */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    color: white
+}
+
+.homepage-header .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the logo and the text */
+}
+
+.homepage-header .logo-box img {
+    width: 150px; /* Adjust the logo size */
+    height: auto;
+}
+
+.homepage-header h1 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2rem; /* Set a large font size */
+    color: var(--accent2); /* Use the primary color for better contrast */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the header */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners for a modern look */
+}
+
+.about-header {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: auto 1fr; /* Two columns: auto for the logo, 1fr for the navigation */
+    align-items: center;
+    position: absolute; /* Position the header on top of the hero image */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure the header is above the image */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    color: white; /* Ensure text is visible */
+}
+
+.about-header .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the logo and the text */
+}
+
+.about-header .logo-box img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+}
+
+.about-header h1 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2rem; /* Set a large font size */
+    color: var(--accent2); /* Use the primary color for better contrast */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the header */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners for a modern look */
+}
+
+.trips-header{
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: auto 1fr; /* Two columns: auto for the logo, 1fr for the navigation */
+    align-items: center;
+    position: absolute; /* Position the header on top of the hero image */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure the header is above the image */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    color: white; /* Ensure text is visible */
+}
+
+.trips-header .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the logo and the text */
+}
+
+.trips-header .logo-box img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+}
+
+.trips-header h1 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2rem; /* Set a large font size */
+    color: var(--accent2); /* Use the primary color for better contrast */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the header */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners for a modern look */
+}
+
+.trips {
+    margin-top: 80px;
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: var(--accent1); /* Light background color */
+    text-align: center; /* Center-align the content */
+}
+
+.trips h2 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2.5rem; /* Large font size for the heading */
+    color: var(--primary-color); /* Primary color for the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.trip-list {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Add spacing between grid items */
+    justify-items: center; /* Center items horizontally */
+    align-items: start; /* Align items to the top */
+}
+
+.trip {
+    background-color: white; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Add padding inside the grid item */
+    text-align: center; /* Center-align the content */
+    max-width: 300px; /* Limit the width of each trip card */
+}
+
+.trip img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+    margin-bottom: 15px; /* Add spacing below the image */
+}
+
+.trip h3 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 1.5rem; /* Medium font size for subheadings */
+    color: var(--primary-color); /* Primary color for subheadings */
+    margin-bottom: 10px; /* Spacing below the subheading */
+}
+
+.trip p {
+    font-size: 1rem; /* Set a readable font size */
+    line-height: 1.6; /* Improve readability */
+    color: var(--text-color); /* Text color */
+}
+
+.trip-table {
+    padding: 0; /* Remove padding for alignment */
+}
+
+.table-container {
+    width: 100%; /* Full width of the container */
+    margin: 0 auto; /* Center the table horizontally */
+    padding: 0; /* Remove padding */
+    background-color: transparent; /* Transparent background */
+}
+
+table {
+    width: 100%; /* Full width of the table */
+    border-collapse: collapse; /* Remove gaps between table cells */
+}
+
+.trip-table h2 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2.5rem; /* Large font size for the heading */
+    color: var(--primary-color); /* Primary color for the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+thead {
+    background-color: var(--primary-color); /* Use the primary color for the header */
+    color: white; /* Set text color to white */
+}
+
+th, td {
+    padding: 15px; /* Add padding inside cells */
+    text-align: center; /* Center-align text */
+    border: 1px solid #ddd; /* Add a light border */
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--accent1); /* Add a light background for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--accent1); /* Add a light background for odd rows */
+}
+
+tbody tr:hover {
+    background-color: var(--highlight-color); /* Highlight row on hover */
+    color: white; /* Change text color on hover */
+}
+
+.contact-header{
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: auto 1fr; /* Two columns: auto for the logo, 1fr for the navigation */
+    align-items: center;
+    position: absolute; /* Position the header on top of the hero image */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    z-index: 1; /* Ensure the header is above the image */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    color: white; /* Ensure text is visible */
+}
+
+.contact-header .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the logo and the text */
+}
+
+.contact-header .logo-box img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+}
+
+.contact-header h1 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2rem; /* Set a large font size */
+    color: var(--accent2); /* Use the primary color for better contrast */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the header */
+    padding: 10px 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners for a modern look */
 }
 
 .history-content {
@@ -347,7 +603,6 @@ form {
     font-size: 1rem; /* Set a readable font size */
     font-weight: bold; /* Make labels bold */
     margin-bottom: 5px; /* Add spacing below labels */
-    color: var(--primary-color); /* Use the primary color for labels */
 }
 
 .contact-form input[type="text"],
@@ -418,11 +673,12 @@ form {
 
 .contact-info {
     padding: 40px 20px; /* Add padding for spacing */
+    margin: 115px 0 0; /* Add margin to account for the header */
     background-color: var(--accent1); /* Light background color */
     color: var(--text-color); /* Text color */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-bottom: 40px; /* Add spacing below the section */
+    margin-bottom: 30px; /* Add spacing below the section */
 }
 
 .contact-info h2 {
@@ -481,10 +737,196 @@ form {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
+.newsletter {
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: var(--accent1); /* Light background color */
+    text-align: center; /* Center-align the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 40px auto; /* Center the section on the page */
+    max-width: auto; /* Limit the width for better readability */
+    width: 100%; /* Ensure the background spans the full width of the container */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.newsletter h2 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2rem; /* Large font size for the heading */
+    color: var(--primary-color); /* Primary color for the heading */
+    margin-bottom: 10px; /* Spacing below the heading */
+}
+
+.newsletter p {
+    font-size: 1.2rem; /* Set a readable font size */
+    color: var(--text-color); /* Text color */
+    margin-bottom: 20px; /* Spacing below the paragraph */
+}
+
+.newsletter-form {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Add spacing between form elements */
+    align-items: center; /* Center-align the form elements */
+}
+
+.newsletter-form .form-group {
+    width: 100%; /* Full width for form groups */
+    text-align: left; /* Align labels to the left */
+}
+
+.newsletter-form label {
+    display: block; /* Make labels block-level elements */
+    font-size: 1rem; /* Set a readable font size */
+    font-weight: bold; /* Make labels bold */
+    margin-bottom: 5px; /* Add spacing below labels */
+    color: black; /* Use the primary color for labels */
+    font-weight: bold; 
+
+}
+
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Add padding for better usability */
+    font-size: 1rem; /* Set a readable font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.newsletter-form input[type="text"]:focus,
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--primary-color); /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.newsletter-form .submit-button {
+    background-color: var(--primary-color); /* Use the primary color for the button */
+    color: white; /* Set text color to white */
+    padding: 12px 20px; /* Add padding for better usability */
+    font-size: 1.2rem; /* Set a readable font size */
+    font-family: var(--font-family-main); /* Use the main font family */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth hover effects */
+}
+
+.newsletter-form .submit-button:hover {
+    background-color: var(--highlight-color); /* Change button color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.grid-layout {
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: var(--accent1); /* Light background color */
+    text-align: center; /* Center-align the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 40px auto; /* Center the section on the page */
+    max-width: 1200px; /* Limit the width for better readability */
+}
+
+.grid-layout h2 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2.5rem; /* Large font size for the heading */
+    color: var(--primary-color); /* Primary color for the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.grid-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Add spacing between grid items */
+    justify-items: center; /* Center items horizontally */
+    align-items: start; /* Align items to the top */
+}
+
+.grid-item {
+    background-color: white; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Add padding inside the grid item */
+    text-align: center; /* Center-align the content */
+}
+
+.grid-item img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+    margin-bottom: 15px; /* Add spacing below the image */
+}
+
+.grid-item h3 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 1.5rem; /* Medium font size for subheadings */
+    color: var(--primary-color); /* Primary color for subheadings */
+    margin-bottom: 10px; /* Spacing below the subheading */
+}
+
+.grid-item p {
+    font-size: 1rem; /* Set a readable font size */
+    line-height: 1.6; /* Improve readability */
+    color: var(--text-color); /* Text color */
+}
+
+.content-wrapper {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 1.5fr 2fr; /* Two columns: 1fr for Call to Action, 2fr for Trip Table */
+    gap: 20px; /* Add spacing between the columns */
+    align-items: start; /* Align items to the top */
+    margin: 40px; /* Add spacing above and center the wrapper */
+    max-width: 1200px; /* Limit the width of the container */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+.call-to-action {
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: var(--primary-color); /* Use the primary color for the background */
+    color: rgb(0, 0, 0); /* Set text color to white for contrast */
+    text-align: center; /* Center-align the content */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    max-width: auto; /* Limit the width for better readability */
+    margin: 20px auto; /* Add margin to account for the header */
+}
+
+.call-to-action h2 {
+    font-family: var(--font-family-heading); /* Use the heading font */
+    font-size: 2.5rem; /* Large font size for the heading */
+    margin-bottom: 15px; /* Add spacing below the heading */
+    color: white;
+}
+
+.call-to-action p {
+    font-size: 1.2rem; /* Set a readable font size */
+    margin-bottom: 20px; /* Add spacing below the paragraph */
+    line-height: 1.6; /* Improve readability */
+    color: white;
+}
+
+.cta-button {
+    display: inline-block; /* Make the link behave like a button */
+    background-color: var(--accent2); /* Use the highlight color for the button */
+    color: rgb(0, 0, 0); /* Set text color to white */
+    padding: 12px 20px; /* Add padding for better usability */
+    font-size: 1.2rem; /* Set a readable font size */
+    font-family: var(--font-family-main); /* Use the main font family */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth hover effects */
+}
+
+.cta-button:hover {
+    background-color: var(--highlight-color); /* Change button color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
 footer {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color); /* Use the primary color for the footer */
     color: white; 
-    padding: 20px; 
+    padding: 30px; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
